@@ -134,7 +134,6 @@ public class SetTestsTest {
         SetTests instance = new SetTests(10);
         Integer workInt = null;
         instance.remove(workInt);
-
     }
 
     @Test(expected = ClassCastException.class)
@@ -142,12 +141,16 @@ public class SetTestsTest {
         SetTests instance = new SetTests(10);
         String workString = "someString";
         instance.remove(workString);
-
     }
 
     @Test
     public void testContainsAll() {
-
+        SetTests instance = new SetTests(10);
+        Collection testCollection = new LinkedList();
+        for (int i = 0; i < 5; i++) {
+            testCollection.add(i);
+        }
+        assertTrue(instance.containsAll(testCollection));
     }
 
     @Test(expected = NullPointerException.class)
